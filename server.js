@@ -1,6 +1,6 @@
-const express = require('express');
-const cors = require('cors');
-const CreateSubscription = require('./routes/createsubscription');
+import express from 'express';
+import cors from 'cors';
+import CreateSubscription from './routes/createsubscription.js';
 
 const app = express();
 
