@@ -9,7 +9,7 @@ const sendSubscription = async function(req, res, next) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Basic ' + Buffer.from('7ctFDGmlwi7j4ozwfGnnZIstPydLKTuBVKTfv3zgGA:x').toString('base64'),
+        'Authorization': 'Basic Q0tDZW5YMHBoOWx1WGh3WUUxVVFOalphQXdLWTVYWkJjZW9nY3pkb2ZjOng=',
       },
       body: JSON.stringify(req.body),
     });
