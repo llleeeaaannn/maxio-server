@@ -15,7 +15,7 @@ const sendSubscription = async function(req, res, next) {
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      throw new Error(`Error. Status: ${response.status}`);
     }
 
     const data = await response.json();
