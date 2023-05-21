@@ -1,7 +1,11 @@
 import express from 'express';
 import fetch from 'node-fetch';
+import dotenv from 'dotenv';
 
+dotenv.config();
 const router = express.Router();
+
+const apiKey = process.env.CHARGIFY_API_KEY;
 
 const sendSubscription = async function(req, res, next) {
   try {
@@ -9,7 +13,7 @@ const sendSubscription = async function(req, res, next) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Basic Q0tDZW5YMHBoOWx1WGh3WUUxVVFOalphQXdLWTVYWkJjZW9nY3pkb2ZjOng=',
+        'Authorization': `Basic ${apiKey}`,
       },
       body: JSON.stringify(req.body),
     });

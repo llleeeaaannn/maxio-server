@@ -1,7 +1,11 @@
 import express from 'express';
 import fetch from 'node-fetch';
+import dotenv from 'dotenv';
 
+dotenv.config();
 const router = express.Router();
+
+const apiKey = process.env.CHARGIFY_API_KEY;
 
 const cancelSubscription = async function (req, res, next) {
   try {
@@ -11,7 +15,7 @@ const cancelSubscription = async function (req, res, next) {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Basic Q0tDZW5YMHBoOWx1WGh3WUUxVVFOalphQXdLWTVYWkJjZW9nY3pkb2ZjOng=',
+        'Authorization': `Basic ${apiKey}`,
       },
     });
 
